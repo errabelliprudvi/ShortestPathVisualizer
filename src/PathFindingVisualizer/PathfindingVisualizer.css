@@ -1,3 +1,22 @@
-.grid {
-    margin: 100px 0 0;
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers content vertically */
+    align-items: center;    /* Centers content horizontally */
+    height: 100vh;          /* Ensures the parent div takes up the full viewport height */
+    width: 100%;            /* Takes up full width */
+    box-sizing: border-box; /* Includes padding and border in dimensions */
   }
+  
+  .logo {
+    margin-bottom: 20px; /* Adds spacing between logo and other elements */
+  }
+  
+  .grid {
+    display: flex;
+    flex-wrap: wrap; /* Ensures the grid wraps content if necessary */
+    justify-content: center;
+    /* Adds spacing between grid items */
+  }
+  

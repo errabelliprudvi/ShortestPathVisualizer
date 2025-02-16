@@ -80,42 +80,46 @@ export default class PathfindingVisualizer extends Component {
 
     return (
       <>
-      <div className="logo">
-          <img src={logo} width="100" height="50" />
+      <div className="main">
+        
+        <div className="logo">
+            <img src={logo} width="100" height="50" />
         </div>
         <button onClick={() => this.visualizeDijkstra()}>
-          Visualize Dijkstra's Algorithm
+            Visualize Dijkstra's Algorithm
         </button>
         <div className="grid">
-          {grid.map((row, rowIdx) => {
-            return (
-              <div key={rowIdx}>
-                
-                {row.map((node, nodeIdx) => {
-                  const {row, col, isFinish, isStart, isWall} = node;
-                  return (
+            {grid.map((row, rowIdx) => {
+              return (
+                <div key={rowIdx}>
+                  
+                  {row.map((node, nodeIdx) => {
+                    const {row, col, isFinish, isStart, isWall} = node;
+                    return (
 
-                    
-                    <Node
-                      key={nodeIdx}
-                      col={col}
-                      isFinish={isFinish}
-                      isStart={isStart}
-                      isWall={isWall}
-                      mouseIsPressed={mouseIsPressed}
-                      onMouseDown={(row, col) => this.handleMouseDown(row, col)}
-                      onMouseEnter={(row, col) =>
-                        this.handleMouseEnter(row, col)
-                      }
-                      onMouseUp={() => this.handleMouseUp()}
-                      row={row}></Node>
                       
-                  );
-                })}
-              </div>
-            );
-          })}
+                      <Node
+                        key={nodeIdx}
+                        col={col}
+                        isFinish={isFinish}
+                        isStart={isStart}
+                        isWall={isWall}
+                        mouseIsPressed={mouseIsPressed}
+                        onMouseDown={(row, col) => this.handleMouseDown(row, col)}
+                        onMouseEnter={(row, col) =>
+                          this.handleMouseEnter(row, col)
+                        }
+                        onMouseUp={() => this.handleMouseUp()}
+                        row={row}></Node>
+                        
+                    );
+                  })}
+                </div>
+              );
+            })}
         </div>
+
+      </div>
       </>
     );
   }
@@ -123,9 +127,9 @@ export default class PathfindingVisualizer extends Component {
 
 const getInitialGrid = () => {
   const grid = [];
-  for (let row = 0; row < 20; row++) {
+  for (let row = 0; row < 30; row++) {
     const currentRow = [];
-    for (let col = 0; col < 50; col++) {
+    for (let col = 0; col < 60; col++) {
       currentRow.push(createNode(col, row));
     }
     grid.push(currentRow);
