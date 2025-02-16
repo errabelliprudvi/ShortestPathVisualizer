@@ -40,6 +40,7 @@ export default class PathfindingVisualizer extends Component {
     this.setState({mouseIsPressed: false});
   }
 
+  
   animateDijkstra(visitedNodesInOrder, nodesInShortestPathOrder) {
     for (let i = 0; i <= visitedNodesInOrder.length; i++) {
       if (i === visitedNodesInOrder.length) {
@@ -82,12 +83,11 @@ export default class PathfindingVisualizer extends Component {
       <>
       <div className="main">
         
-        <div className="logo">
-            <img src={logo} width="100" height="50" />
-        </div>
+       
         <button onClick={() => this.visualizeDijkstra()}>
             Visualize Dijkstra's Algorithm
         </button>
+        
         <div className="grid">
             {grid.map((row, rowIdx) => {
               return (
